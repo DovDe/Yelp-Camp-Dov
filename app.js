@@ -21,10 +21,11 @@ var commentRoutes       = require("./routes/comments"),
 
 
 mongoose.Promise = global.Promise;
-//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
-mongoose.connect("mongodb://dovde:Mitztaslach345@ds023445.mlab.com:23445/dovsyelpcamp", {useMongoClient: true});
 
-//mongodb://<dovde>:<Mitztaslach345>@ds023445.mlab.com:23445/dovsyelpcamp
+
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+// mongoose.connect("mongodb://dovde:Mitztaslach345@ds023445.mlab.com:23445/dovsyelpcamp", {useMongoClient: true});
+
 
 app.use(bodyParser.urlencoded({extended : true}));
 app.set("view engine", "ejs");

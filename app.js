@@ -24,7 +24,8 @@ mongoose.Promise = global.Promise;
 
 
 // this can be used to create a back up db
-var url = process.env.DATABASEURL  || "back db";
+// var url = process.env.DATABASEURL  || "back db";
+
 mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 
 app.use(bodyParser.urlencoded({extended : true}));
